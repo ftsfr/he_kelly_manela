@@ -1,0 +1,151 @@
+[config]
+type = "pipeline"
+chartbook_format_version = "0.0.2"
+
+[site]
+title = "He-Kelly-Manela Factors"
+author = "Jeremy Bejarano"
+copyright = "2025"
+logo_path = ""
+favicon_path = ""
+
+[pipeline]
+id = "he_kelly_manela"
+pipeline_name = "He-Kelly-Manela Factors"
+pipeline_description = "Intermediary Capital Risk Factors from He, Kelly, and Manela (2017)"
+lead_pipeline_developer = "Jeremiah Bejarano"
+contributors = ["Jeremiah Bejarano"]
+runs_on = "Windows/Linux/MacOS"
+git_repo_URL = "https://github.com/ftsfr/he_kelly_manela"
+README_file_path = "./README.md"
+
+[notebooks]
+
+[notebooks.summary_he_kelly_manela_ipynb]
+notebook_name = "summary_he_kelly_manela_ipynb"
+notebook_description = "Summary statistics and visualization of He-Kelly-Manela factor data"
+notebook_path = "_output/_notebook_build/summary_he_kelly_manela_ipynb.ipynb"
+is_publishable = true
+
+[charts]
+
+[dataframes]
+
+[dataframes.ftsfr_he_kelly_manela_factors_monthly]
+dataframe_name = "ftsfr_he_kelly_manela_factors_monthly"
+short_description_df = "Monthly intermediary capital risk factors from He, Kelly, and Manela (2017)"
+data_sources = ["he_kelly_manela"]
+data_providers = ["Asaf Manela"]
+need_to_contact_provider = ["no"]
+data_on_pre_approved_list = ["No"]
+links_to_data_providers = ["https://asaf.manela.org/papers/hkm/intermediarycapitalrisk/"]
+topic_tags = ["factors", "intermediary", "capital"]
+type_of_data_access = ["Public"]
+data_license = "Public"
+license_expiration_date = ""
+provider_contact_info = ""
+restriction_on_use = "No"
+how_is_pulled = "Downloaded from Asaf Manela's website"
+path_to_parquet_data = "./_data/ftsfr_he_kelly_manela_factors_monthly.parquet"
+path_to_excel_data = ""
+date_col = "ds"
+dataframe_docs_str = """
+## Monthly Intermediary Capital Risk Factors
+
+This dataset contains monthly observations of the intermediary capital risk factors from He, Kelly, and Manela (2017).
+
+### Columns
+
+| Column | Description |
+|--------|-------------|
+| unique_id | Factor identifier |
+| ds | Date |
+| y | Factor value |
+
+### Factors
+
+- `intermediary_capital_ratio`: Capital ratio of primary dealers
+- `intermediary_capital_risk_factor`: Innovation in capital ratio (the risk factor)
+- `intermediary_value_weighted_investment_return`: Value-weighted investment return
+- `intermediary_leverage_ratio_squared`: Squared leverage ratio
+"""
+
+[dataframes.ftsfr_he_kelly_manela_factors_daily]
+dataframe_name = "ftsfr_he_kelly_manela_factors_daily"
+short_description_df = "Daily intermediary capital risk factors from He, Kelly, and Manela (2017)"
+data_sources = ["he_kelly_manela"]
+data_providers = ["Asaf Manela"]
+need_to_contact_provider = ["no"]
+data_on_pre_approved_list = ["No"]
+links_to_data_providers = ["https://asaf.manela.org/papers/hkm/intermediarycapitalrisk/"]
+topic_tags = ["factors", "intermediary", "capital"]
+type_of_data_access = ["Public"]
+data_license = "Public"
+license_expiration_date = ""
+provider_contact_info = ""
+restriction_on_use = "No"
+how_is_pulled = "Downloaded from Asaf Manela's website"
+path_to_parquet_data = "./_data/ftsfr_he_kelly_manela_factors_daily.parquet"
+path_to_excel_data = ""
+date_col = "ds"
+dataframe_docs_str = """
+## Daily Intermediary Capital Risk Factors
+
+This dataset contains daily observations of the intermediary capital risk factors from He, Kelly, and Manela (2017).
+
+### Columns
+
+| Column | Description |
+|--------|-------------|
+| unique_id | Factor identifier |
+| ds | Date |
+| y | Factor value |
+
+### Factors
+
+- `intermediary_capital_ratio`: Capital ratio of primary dealers
+- `intermediary_capital_risk_factor`: Innovation in capital ratio (the risk factor)
+- `intermediary_value_weighted_investment_return`: Value-weighted investment return
+- `intermediary_leverage_ratio_squared`: Squared leverage ratio
+"""
+
+[dataframes.ftsfr_he_kelly_manela_all]
+dataframe_name = "ftsfr_he_kelly_manela_all"
+short_description_df = "All factors and test assets from He, Kelly, and Manela (2017)"
+data_sources = ["he_kelly_manela"]
+data_providers = ["Asaf Manela"]
+need_to_contact_provider = ["no"]
+data_on_pre_approved_list = ["No"]
+links_to_data_providers = ["https://asaf.manela.org/papers/hkm/intermediarycapitalrisk/"]
+topic_tags = ["factors", "intermediary", "capital", "test_assets"]
+type_of_data_access = ["Public"]
+data_license = "Public"
+license_expiration_date = ""
+provider_contact_info = ""
+restriction_on_use = "No"
+how_is_pulled = "Downloaded from Asaf Manela's website"
+path_to_parquet_data = "./_data/ftsfr_he_kelly_manela_all.parquet"
+path_to_excel_data = ""
+date_col = "ds"
+dataframe_docs_str = """
+## All Factors and Test Assets
+
+This dataset contains all monthly factors and test assets from He, Kelly, and Manela (2017).
+
+### Columns
+
+| Column | Description |
+|--------|-------------|
+| unique_id | Factor/asset identifier |
+| ds | Date |
+| y | Value |
+
+### Factors
+
+- `intermediary_capital_ratio`: Capital ratio of primary dealers
+- `intermediary_capital_risk_factor`: Innovation in capital ratio (the risk factor)
+- `intermediary_value_weighted_investment_return`: Value-weighted investment return
+- `intermediary_leverage_ratio_squared`: Squared leverage ratio
+
+This extended dataset also includes test portfolios used in the original paper.
+"""
