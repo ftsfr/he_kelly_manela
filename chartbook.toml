@@ -24,10 +24,35 @@ README_file_path = "./README.md"
 [notebooks.summary_he_kelly_manela_ipynb]
 notebook_name = "summary_he_kelly_manela_ipynb"
 notebook_description = "Summary statistics and visualization of He-Kelly-Manela factor data"
-notebook_path = "_output/_notebook_build/summary_he_kelly_manela_ipynb.ipynb"
+notebook_path = "_output/summary_he_kelly_manela_ipynb.ipynb"
 is_publishable = true
 
 [charts]
+
+[charts.hkm_factors_replication]
+chart_name = "Intermediary Capital Risk Factors"
+short_description_chart = "Monthly intermediary capital risk factors from He, Kelly, and Manela (2017)"
+dataframe_id = "ftsfr_he_kelly_manela_factors_monthly"
+path_to_html_chart = "./_output/hkm_factors_replication.html"
+path_to_excel_chart = ""
+topic_tags = ["factors", "intermediary", "capital", "replication"]
+past_publications = ["He, Kelly, and Manela (2017) - Intermediary Asset Pricing: New Evidence from Many Asset Classes"]
+chart_docs_str = """
+## Intermediary Capital Risk Factors
+
+Monthly factors from He, Kelly, and Manela (2017).
+
+### Factors
+
+- Intermediary capital ratio
+- Capital risk factor (innovation)
+- Value-weighted investment return
+- Squared leverage ratio
+
+### Reference
+
+He, Kelly, and Manela (2017) - Intermediary Asset Pricing
+"""
 
 [dataframes]
 

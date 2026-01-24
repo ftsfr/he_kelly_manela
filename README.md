@@ -36,3 +36,18 @@ He, Zhiguo, Bryan Kelly, and Asaf Manela. "Intermediary asset pricing: New evide
 - `intermediary_capital_risk_factor`: Innovation in capital ratio (risk factor)
 - `intermediary_value_weighted_investment_return`: Value-weighted investment return
 - `intermediary_leverage_ratio_squared`: Squared leverage ratio
+
+## Academic References
+
+### Primary Paper
+
+- **He, Kelly, and Manela (2017)** - "Intermediary Asset Pricing: New Evidence from Many Asset Classes"
+  - Journal of Financial Economics 126.1 (2017): 1-35
+  - DOI: [10.1016/j.jfineco.2017.08.002](https://doi.org/10.1016/j.jfineco.2017.08.002)
+
+### Key Findings
+
+- Shocks to intermediary capital ratios explain cross-sectional variation in expected returns
+- Intermediary capital risk is procyclical
+- Primary dealers act as marginal investors across asset classes
+- The intermediary capital risk factor prices assets across equities, bonds, commodities, and currencies

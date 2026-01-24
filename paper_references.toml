@@ -1,0 +1,22 @@
+# Paper References for He-Kelly-Manela Module
+
+[He2017]
+title = "Intermediary Asset Pricing: New Evidence from Many Asset Classes"
+authors = "Zhiguo He, Bryan Kelly, and Asaf Manela"
+year = 2017
+journal = "Journal of Finance"
+description = "The paper investigates the role of financial intermediaries, specifically primary dealers, in asset pricing across various asset classes."
+empirical_facts = [
+    "Shocks to the equity capital ratio of primary dealers explain cross-sectional differences in expected returns across seven asset classes.",
+    "Intermediary capital risk is procyclical, indicating countercyclical leverage among intermediaries.",
+    "The estimated price of risk on intermediary capital shocks is consistently positive across all asset classes.",
+    "Primary dealers are identified as marginal investors in multiple asset markets, influencing asset prices.",
+    "Placebo tests show that non-primary dealers and nonfinancial firms do not exhibit similar pricing power.",
+]
+lessons_learned = [
+    "Financial intermediaries play a crucial role in asset pricing across diverse markets.",
+    "Intermediary capital ratios serve as a significant factor in explaining asset returns, challenging traditional household-based models.",
+    "The procyclical nature of intermediary capital risk suggests that intermediaries have higher marginal value of wealth during low capital periods.",
+]
+data_sources = ["New York Fed's primary dealer list", "CRSP/Compustat data", "Datastream data"]
+data_url = "https://asaf.manela.org/papers/hkm/intermediarycapitalrisk/"
