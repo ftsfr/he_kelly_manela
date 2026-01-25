@@ -167,11 +167,28 @@ def task_run_notebooks():
 # fmt: on
 
 
+def task_generate_charts():
+    """Generate interactive HTML charts."""
+    return {
+        "actions": ["python src/generate_chart.py"],
+        "file_dep": [
+            "src/generate_chart.py",
+            DATA_DIR / "ftsfr_he_kelly_manela_factors_monthly.parquet",
+        ],
+        "targets": [
+            OUTPUT_DIR / "hkm_factors_replication.html",
+        ],
+        "verbosity": 2,
+        "task_dep": ["format"],
+    }
+
+
 def task_generate_pipeline_site():
     return {
         "actions": [
             "chartbook build -f",
         ],
         "targets": ["docs/index.html"],
-        "file_dep": ["chartbook.toml", *notebook_files],
+        "file_dep": ["chartbook.toml", OUTPUT_DIR / "hkm_factors_replication.html", *notebook_files],
+        "task_dep": ["generate_charts"],
     }
