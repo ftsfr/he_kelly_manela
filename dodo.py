@@ -66,15 +66,13 @@ def copy_dir_contents_to_folder(dir_path, destination_folder):
 
 def task_config():
     """Create empty directories for data and output if they don't exist"""
-
+    def create_dirs():
+        DATA_DIR.mkdir(parents=True, exist_ok=True)
+        OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     return {
-        "actions": [
-            f"mkdir -p {DATA_DIR}",
-            f"mkdir -p {OUTPUT_DIR}",
-        ],
+        "actions": [create_dirs],
         "targets": [DATA_DIR, OUTPUT_DIR],
-        "file_dep": [],
-        "clean": [],
+        "verbosity": 2,
     }
 
 
@@ -142,27 +140,23 @@ def task_run_notebooks():
     for notebook in notebook_tasks.keys():
         pyfile_path = Path(notebook_tasks[notebook]["path"])
         notebook_path = pyfile_path.with_suffix(".ipynb")
-        notebook_stem = pyfile_path.stem  # Get the actual filename without extension
         yield {
             "name": notebook,
             "actions": [
-                """python -c "import sys; from datetime import datetime; print(f'Start """ + notebook + """: {datetime.now()}', file=sys.stderr)" """,
-                f"ipynb-py-convert {pyfile_path} {notebook_path}",
+                f"jupytext --to notebook --output {notebook_path} {pyfile_path}",
                 jupyter_execute_notebook(notebook_path),
                 jupyter_to_html(notebook_path),
                 mv(notebook_path, OUTPUT_DIR),
-                """python -c "import sys; from datetime import datetime; print(f'End """ + notebook + """: {datetime.now()}', file=sys.stderr)" """,
             ],
             "file_dep": [
                 pyfile_path,
                 *notebook_tasks[notebook]["file_dep"],
             ],
             "targets": [
-                OUTPUT_DIR / f"{notebook_stem}.html",  # Use the actual filename stem
+                OUTPUT_DIR / f"{notebook}.html",
                 *notebook_tasks[notebook]["targets"],
             ],
             "clean": True,
-            # "verbosity": 1,
         }
 # fmt: on
 
