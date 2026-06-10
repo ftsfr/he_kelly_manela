@@ -172,7 +172,8 @@ target/
 \.pytest_cache/
 ~$*
 
-.doit.db.db
+.doit.db
+.doit.db.*
 .doit-db.sqlite
 
 *Thumbs.db

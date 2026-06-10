@@ -41,12 +41,14 @@ def convert_intermediary_to_long_format(df):
         Long format DataFrame with columns: unique_id, ds, y
         where unique_id contains the variable names, ds contains dates, and y contains values
     """
-    # Define the columns to convert to long format
+    # Define the columns to convert to long format. Only the two return-like
+    # factors are kept; the state-variable level series
+    # (intermediary_capital_ratio, intermediary_leverage_ratio_squared) are
+    # excluded because their level scale dominates pooled R-squared in the
+    # forecasting panel (mirrors ftsfr monorepo commit 0742e01).
     value_columns = [
-        "intermediary_capital_ratio",
         "intermediary_capital_risk_factor",
         "intermediary_value_weighted_investment_return",
-        "intermediary_leverage_ratio_squared",
     ]
 
     # Use pandas melt to convert from wide to long format
