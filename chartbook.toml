@@ -1,80 +1,55 @@
-[config]
-type = "pipeline"
-chartbook_format_version = "0.0.2"
-
-[site]
-title = "He-Kelly-Manela Factors"
-author = "Jeremy Bejarano"
+[project]
+name = "He-Kelly-Manela Factors"
+description = "Intermediary Capital Risk Factors from He, Kelly, and Manela (2017)"
+contributors = [
+    "Jeremiah Bejarano",
+]
+repo_url = "https://github.com/ftsfr/he_kelly_manela"
 copyright = "2025"
-logo_path = ""
-favicon_path = ""
-
-[pipeline]
-id = "he_kelly_manela"
-pipeline_name = "He-Kelly-Manela Factors"
-pipeline_description = "Intermediary Capital Risk Factors from He, Kelly, and Manela (2017)"
-lead_pipeline_developer = "Jeremiah Bejarano"
-contributors = ["Jeremiah Bejarano"]
-runs_on = "Windows/Linux/MacOS"
-git_repo_URL = "https://github.com/ftsfr/he_kelly_manela"
-README_file_path = "./README.md"
-
-[notebooks]
+os_compatibility = [
+    "Windows",
+    "Linux",
+    "MacOS",
+]
 
 [notebooks.summary_he_kelly_manela_ipynb]
-notebook_name = "summary_he_kelly_manela_ipynb"
-notebook_description = "Summary statistics and visualization of He-Kelly-Manela factor data"
-notebook_path = "_output/summary_he_kelly_manela_ipynb.ipynb"
-is_publishable = true
-
-[charts]
-
-[charts.hkm_factors_replication]
-chart_name = "Intermediary Capital Risk Factors"
-short_description_chart = "Monthly intermediary capital risk factors from He, Kelly, and Manela (2017)"
-dataframe_id = "ftsfr_he_kelly_manela_factors_monthly"
-path_to_html_chart = "./_output/hkm_factors_replication.html"
-path_to_excel_chart = ""
-topic_tags = ["factors", "intermediary", "capital", "replication"]
-past_publications = ["He, Kelly, and Manela (2017) - Intermediary Asset Pricing: New Evidence from Many Asset Classes"]
-chart_docs_str = """
-## Intermediary Capital Risk Factors
-
-Monthly factors from He, Kelly, and Manela (2017).
-
-### Factors
-
-- Intermediary capital ratio
-- Capital risk factor (innovation)
-- Value-weighted investment return
-- Squared leverage ratio
-
-### Reference
-
-He, Kelly, and Manela (2017) - Intermediary Asset Pricing
-"""
-
-[dataframes]
+name = "summary_he_kelly_manela_ipynb"
+description = "Summary statistics and visualization of He-Kelly-Manela factor data"
+path = "_output/summary_he_kelly_manela_ipynb.ipynb"
+publishable = true
 
 [dataframes.ftsfr_he_kelly_manela_factors_monthly]
-dataframe_name = "ftsfr_he_kelly_manela_factors_monthly"
-short_description_df = "Monthly intermediary capital risk factors from He, Kelly, and Manela (2017)"
-data_sources = ["he_kelly_manela"]
-data_providers = ["Asaf Manela"]
-need_to_contact_provider = ["no"]
-data_on_pre_approved_list = ["No"]
-links_to_data_providers = ["https://asaf.manela.org/papers/hkm/intermediarycapitalrisk/"]
-topic_tags = ["factors", "intermediary", "capital"]
-type_of_data_access = ["Public"]
-data_license = "Public"
-license_expiration_date = ""
-provider_contact_info = ""
-restriction_on_use = "No"
-how_is_pulled = "Downloaded from Asaf Manela's website"
-path_to_parquet_data = "./_data/ftsfr_he_kelly_manela_factors_monthly.parquet"
-path_to_excel_data = ""
+name = "ftsfr_he_kelly_manela_factors_monthly"
+description = "Monthly intermediary capital risk factors from He, Kelly, and Manela (2017)"
+sources = [
+    "he_kelly_manela",
+]
+providers = [
+    "Asaf Manela",
+]
+contact_required = [
+    "no",
+]
+pre_approved = [
+    "No",
+]
+provider_links = [
+    "https://asaf.manela.org/papers/hkm/intermediarycapitalrisk/",
+]
+tags = [
+    "factors",
+    "intermediary",
+    "capital",
+]
+access_types = [
+    "Public",
+]
+license = "Public"
+restrictions = "No"
+pull_method = "Downloaded from Asaf Manela's website"
+path = "./_data/ftsfr_he_kelly_manela_factors_monthly.parquet"
 date_col = "ds"
-dataframe_docs_str = """
+docs = """
 ## Monthly Intermediary Capital Risk Factors
 
 This dataset contains monthly observations of the intermediary capital risk factors from He, Kelly, and Manela (2017).
@@ -96,24 +71,37 @@ This dataset contains monthly observations of the intermediary capital risk fact
 """
 
 [dataframes.ftsfr_he_kelly_manela_factors_daily]
-dataframe_name = "ftsfr_he_kelly_manela_factors_daily"
-short_description_df = "Daily intermediary capital risk factors from He, Kelly, and Manela (2017)"
-data_sources = ["he_kelly_manela"]
-data_providers = ["Asaf Manela"]
-need_to_contact_provider = ["no"]
-data_on_pre_approved_list = ["No"]
-links_to_data_providers = ["https://asaf.manela.org/papers/hkm/intermediarycapitalrisk/"]
-topic_tags = ["factors", "intermediary", "capital"]
-type_of_data_access = ["Public"]
-data_license = "Public"
-license_expiration_date = ""
-provider_contact_info = ""
-restriction_on_use = "No"
-how_is_pulled = "Downloaded from Asaf Manela's website"
-path_to_parquet_data = "./_data/ftsfr_he_kelly_manela_factors_daily.parquet"
-path_to_excel_data = ""
+name = "ftsfr_he_kelly_manela_factors_daily"
+description = "Daily intermediary capital risk factors from He, Kelly, and Manela (2017)"
+sources = [
+    "he_kelly_manela",
+]
+providers = [
+    "Asaf Manela",
+]
+contact_required = [
+    "no",
+]
+pre_approved = [
+    "No",
+]
+provider_links = [
+    "https://asaf.manela.org/papers/hkm/intermediarycapitalrisk/",
+]
+tags = [
+    "factors",
+    "intermediary",
+    "capital",
+]
+access_types = [
+    "Public",
+]
+license = "Public"
+restrictions = "No"
+pull_method = "Downloaded from Asaf Manela's website"
+path = "./_data/ftsfr_he_kelly_manela_factors_daily.parquet"
 date_col = "ds"
-dataframe_docs_str = """
+docs = """
 ## Daily Intermediary Capital Risk Factors
 
 This dataset contains daily observations of the intermediary capital risk factors from He, Kelly, and Manela (2017).
@@ -135,24 +123,38 @@ This dataset contains daily observations of the intermediary capital risk factor
 """
 
 [dataframes.ftsfr_he_kelly_manela_all]
-dataframe_name = "ftsfr_he_kelly_manela_all"
-short_description_df = "All factors and test assets from He, Kelly, and Manela (2017)"
-data_sources = ["he_kelly_manela"]
-data_providers = ["Asaf Manela"]
-need_to_contact_provider = ["no"]
-data_on_pre_approved_list = ["No"]
-links_to_data_providers = ["https://asaf.manela.org/papers/hkm/intermediarycapitalrisk/"]
-topic_tags = ["factors", "intermediary", "capital", "test_assets"]
-type_of_data_access = ["Public"]
-data_license = "Public"
-license_expiration_date = ""
-provider_contact_info = ""
-restriction_on_use = "No"
-how_is_pulled = "Downloaded from Asaf Manela's website"
-path_to_parquet_data = "./_data/ftsfr_he_kelly_manela_all.parquet"
-path_to_excel_data = ""
+name = "ftsfr_he_kelly_manela_all"
+description = "All factors and test assets from He, Kelly, and Manela (2017)"
+sources = [
+    "he_kelly_manela",
+]
+providers = [
+    "Asaf Manela",
+]
+contact_required = [
+    "no",
+]
+pre_approved = [
+    "No",
+]
+provider_links = [
+    "https://asaf.manela.org/papers/hkm/intermediarycapitalrisk/",
+]
+tags = [
+    "factors",
+    "intermediary",
+    "capital",
+    "test_assets",
+]
+access_types = [
+    "Public",
+]
+license = "Public"
+restrictions = "No"
+pull_method = "Downloaded from Asaf Manela's website"
+path = "./_data/ftsfr_he_kelly_manela_all.parquet"
 date_col = "ds"
-dataframe_docs_str = """
+docs = """
 ## All Factors and Test Assets
 
 This dataset contains all monthly factors and test assets from He, Kelly, and Manela (2017).
@@ -173,4 +175,35 @@ This dataset contains all monthly factors and test assets from He, Kelly, and Ma
 - `intermediary_leverage_ratio_squared`: Squared leverage ratio
 
 This extended dataset also includes test portfolios used in the original paper.
+"""
+
+[charts.hkm_factors_replication]
+name = "Intermediary Capital Risk Factors"
+description = "Monthly intermediary capital risk factors from He, Kelly, and Manela (2017)"
+dataframe = "ftsfr_he_kelly_manela_factors_monthly"
+path = "./_output/hkm_factors_replication.html"
+tags = [
+    "factors",
+    "intermediary",
+    "capital",
+    "replication",
+]
+publications = [
+    "He, Kelly, and Manela (2017) - Intermediary Asset Pricing: New Evidence from Many Asset Classes",
+]
+docs = """
+## Intermediary Capital Risk Factors
+
+Monthly factors from He, Kelly, and Manela (2017).
+
+### Factors
+
+- Intermediary capital ratio
+- Capital risk factor (innovation)
+- Value-weighted investment return
+- Squared leverage ratio
+
+### Reference
+
+He, Kelly, and Manela (2017) - Intermediary Asset Pricing
 """
